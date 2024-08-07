@@ -1,0 +1,16 @@
+name: Fido, type: Dog, BirthDate: 2020-01-01, commands: Sit, Stay, Fetch            
+name: Whiskers, type: Cat, BirthDate: 2019-05-15, commands: Sit, Pounce
+name: Hammy, type: Hamster, BirthDate: 20211-03-10, commands: Roll, Hide   
+name: Buddy, type: Dog, BirthDate: 2018-12-10, commands: Sit, Paw, Bark
+name: Smudge, type: Cat, BirthDate: 2020-02-20, commands: Sit, Pounce, Scratch
+name: Peanut, type: Humster, BirthDate: 2021-08-01, commands: Roll, Spin
+name: Bella, type: Dog, BirthDate: 2019-11-11, commands: Sit, Stay, Roll
+name: Oliver, type: Cat, BirthDate: 2020-06-30, commands: Meow, Scratch, Jump
+name: Thunder, type: Horse, birthDate: 2015-07-21, commands: Trot, Canter, Gallop
+name: Sandy, type: Camel, birthDate: 2016-11-03, commands: Walk, Carry Load
+name: Eeyore, type: Donkey, birthDate: 2017-09-18, commands: Walk, Carry Load, Bray
+name: Storm, type: Horse, birthDate: 2014-05-05, commands: Trot, Canter
+name: Dune, type: Camel, birthDate: 2018-12-12, commands: Walk, Sit
+name: Burro, type: Donkey, birthDate: 2019-01-23, commands: Walk, Bray, Kick
+name: Blaze, type: Horse, birthDate: 2016-02-29, commands: Trot, Jump, Gallop
+name: Sahara, typy: Camel, birthDate: 2015-08-14, commands: Walk, Run

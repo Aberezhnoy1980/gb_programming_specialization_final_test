@@ -1,0 +1,8 @@
+name: Thunder, type: Horse, birthDate: 2015-07-21, commands: Trot, Canter, Gallop
+name: Sandy, type: Camel, birthDate: 2016-11-03, commands: Walk, Carry Load
+name: Eeyore, type: Donkey, birthDate: 2017-09-18, commands: Walk, Carry Load, Bray
+name: Storm, type: Horse, birthDate: 2014-05-05, commands: Trot, Canter
+name: Dune, type: Camel, birthDate: 2018-12-12, commands: Walk, Sit
+name: Burro, type: Donkey, birthDate: 2019-01-23, commands: Walk, Bray, Kick
+name: Blaze, type: Horse, birthDate: 2016-02-29, commands: Trot, Jump, Gallop
+name: Sahara, typy: Camel, birthDate: 2015-08-14, commands: Walk, Run
