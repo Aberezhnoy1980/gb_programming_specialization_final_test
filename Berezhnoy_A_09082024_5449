@@ -1,0 +1,237 @@
+    1  sudo apt install gcc make perl
+    2  ip a
+    3  exit
+    4  service status ssh
+    5  service ssh status
+    6  ssh --help
+    7  ssh -help
+    8  ssh -?
+    9  ssh
+   10  ssh -version
+   11  ssh -v
+   12  ssh --v
+   13  systemctl status ssh
+   14  sudo apt update
+   15  systemctl status ssh
+   16  sudo apt install ssh
+   17  servcie ssh status
+   18  service ssh status
+   19  service ssh start
+   20  service ssh status
+   21  pwd
+   22  exit
+   23  shutdown 
+   24  sudo shutdown -h now
+   25  uname
+   26  uname -a
+   27  ls -la
+   28  pwd
+   29  ls -l
+   30  ps afx | less
+   31  exit
+   32  pwd
+   33  ls -la
+   34  mkdir gb_prog_spec_final_test
+   35  ls -la
+   36  cat ./gb_prog_spec_final_test/pets
+   37  cat ./gb_prog_spec_final_test pets
+   38  cat > ./gb_prog_spec_final_test/pets
+   39  ls -la
+   40  ls -la gb_prog_spec_final_test/
+   41  cat petsp
+   42  cat pets
+   43  cat ./gb_prog_spec_final_test/pets
+   44  rm -r gb_prog_spec_final_test/
+   45  ls -la
+   46  cd ./.ssh
+   47  ls -sla
+   48  cat ./authorized_keys 
+   49  vim auth
+   50  vim authorized_keys 
+   51  sudo apt update
+   52  apt upgrade
+   53  sudo apt upgradee
+   54  sudo apt upgrade
+   55  git -version
+   56  git --help
+   57  vim --help
+   58  sudo apt install vim
+   59  vim ./authorized_keys 
+   60  cd ..
+   61  sudo apt install git
+   62  git -version
+   63  git --version
+   64  ssh --version
+   65  ssh -version
+   66  ssh -v
+   67  ssh --v
+   68  ssh --help
+   69  whatis ssh
+   70  whereis ssh
+   71  ssh --help
+   72  ssh -help
+   73  ssh -h
+   74  ssh --h
+   75  man ssh
+   76  ssh-keygen -t ed25519 -C "Berezhnoy_aa@mail.ru"
+   77  eval "$(ssh-agent -s)"
+   78  ssh-add ~/.ssh/id_ed25519
+   79  cat ./.ssh/id_ed25519.pub 
+   80  ls -la
+   81  ls -la ~/.ssh
+   82  pwd; ls -la
+   83  ls -alh
+   84  mkdir GeekBrains_prog_spec_final_test
+   85  cd ./GeekBrains_prog_spec_final_test/
+   86  git init
+   87  git branch -a
+   88  git status
+   89  echo "# gb_programming_specialization_final_test" >> README.md
+   90  git add README.md
+   91  git commit -m "first commit"
+   92  git config --global user.email "berezhnoy_aa@mail.ru"
+   93  git commit -m "first commit"
+   94  git branch -M main
+   95  git remote add origin git@github.com:Aberezhnoy1980/gb_programming_specialization_final_test.git
+   96  git remote -v
+   97  git push -u origin main
+   98  git branch -a
+   99  git checkout -b files_creating
+  100  git branch -a
+  101  cat pets
+  102  cat > pets
+  103  cat pets
+  104  vim pets
+  105  cat pets
+  106  cat > Pack_animals
+  107  cat Pack_animals 
+  108  vim Pack_animals 
+  109  cat Pack_animals 
+  110  cat Pack_animals > pets 
+  111  cat pets
+  112  cat Pack_animals 
+  113  vim pets
+  114  cat pets
+  115  cat Human_Friends Pack_animals >> pets 
+  116  cat Human_Friends Pack_animals > pets 
+  117  cat test
+  118  cat Pack_animals >> pets
+  119  cat pets
+  120  cat Pack_animals 
+  121  vim pets
+  122  cat pets
+  123  cat Pack_animals 
+  124  cat pets Pack_animals > Human_friends
+  125  cat Human_friends 
+  126  ls -sla
+  127  mv pets Pets
+  128  ls -hla
+  129  ls -hl
+  130  ls -lh
+  131  mkdir animals && mv Human_friends ./animals
+  132  ls -lh
+  133  tree
+  134  sudo apt install tree
+  135  tree
+  136  apt search mysql
+  137  exit
+  138  git status
+  139  cd ./GeekBrains_prog_spec_final_test/
+  140  git status
+  141  ls -la
+  142  ls -l ./animals/
+  143  cat ./animals/Human_friends 
+  144  git commit -am"files created"
+  145  git add .; git commit -m"files created; git push origin files_creating;
+  146  ;
+  147  git add .
+  148  git commit -m"files created"
+  149  git push origin files_creating
+  150  git checkout main
+  151  git merge files_creating
+  152  git status
+  153  git push origin main
+  154  git branch -d files_creating
+  155  git push origin main
+  156  git push -f origin main
+  157  git status
+  158  cat /opt/os-release
+  159  cat /etc/os-release
+  160  echo ~
+  161  ll
+  162  exit
+  163  sudo shutdown -h now
+  164  sudo apt-key adv --keyserver pgp.mit.edu --recv-keys A8D3785C
+  165  gpg --help
+  166  gpg --recv-keys A8D3785C
+  167  vim mysql_pubkey.asc
+  168  ll
+  169  gpg --import mysql_pubkey.asc
+  170  sudo apt-key add ./mysql_pubkey.asc 
+  171  cat /etc/apt/sources.list.d/mysql.list
+  172  cat /etc/apt/sources.list.d mysql.list
+  173  cat > /etc/apt/sources.list.d/mysql.list
+  174  sudo cat > /etc/apt/sources.list.d/mysql.list
+  175  sudo -i
+  176  ll
+  177  ll /etc/apt/sources.list.d
+  178  sudo vim /etc/apt/sources.list.d/mysql.list 
+  179  sudo apt update
+  180  sudo apt install mysql-server
+  181  sudo apt-get update
+  182  sudo apt-get install mysql-server
+  183  sudo apt download mysql
+  184  vim /etc/apt/sources.list.d/mysql.list 
+  185  sudo vim /etc/apt/sources.list.d/mysql.list 
+  186  sudo apt update
+  187  sudo vim /etc/apt/sources.list
+  188  sudo vim /etc/apt/sources.list.d/
+  189  sudo vim /etc/apt/sources.list.d/mysql.list 
+  190  sudo apt update
+  191  sudo vim /etc/apt/sources.list.d/mysql.list 
+  192  sudo apt update
+  193  sudo apt inistall mysql-server
+  194  sudo apt install mysql-server
+  195  mysql 
+  196  mysql -u root -p 
+  197  wget --help
+  198  ll | grep mysql
+  199  sudo apt download connector-j
+  200  sudo apt download mysql-connector-j
+  201  sudo dpkg - i mysql-connector-j
+  202  sudo dpkg -i mysql-connector-j
+  203  ll
+  204  sudo dpkg -i mysql-connector-j_9.0.0-1ubuntu24.04_all.deb
+  205  ll | grep mysql
+  206  ll | grep mysql-c
+  207  sudo dpkg -r mysql-connector-j && apt autoremove
+  208  sudo dpkg -r mysql-connector-j && sudo apt autoremove
+  209  ll
+  210  rm mysql-connector-j_9.0.0-1ubuntu24.04_all.deb 
+  211  ll
+  212  rm mysql-connector-j_9.0.0-1ubuntu24.04_all.deb 
+  213  ll
+  214  sudo dpkg -r mysql-connector-j
+  215  sudo apt autoremove
+  216  ll | grep mysql
+  217  history
+  218  history > ./GeekBrains_prog_spec_final_test/commands.txt
+  219  ll ./GeekBrains_prog_spec_final_test/
+  220  cat ./GeekBrains_prog_spec_final_test/commands.txt 
+  221  exit
+  222  lsb_release -a
+  223  ll /etc
+  224  echo /etc/os-release
+  225  cat /etc/os-release
+  226  ll
+  227  cd ./Загрузки/
+  228  ll
+  229  git status
+  230  history
+  231  less history
+  232  history --help
+  233  cd ./GeekBrains_prog_spec_final_test/
+  234  git status
+  235  rm commands.txt 
+  236  git checkout -b command_list_and_mysql_task
+  237  history > Berezhnoy_A_09082024_5449
