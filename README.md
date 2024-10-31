@@ -525,29 +525,23 @@ INSERT INTO `animals_commands` VALUES
 
 ```sql
 DELIMITER $$
-
 CREATE PROCEDURE drop_tables_by_names(IN table_names TEXT)
 BEGIN
     DECLARE table_name VARCHAR(255);
     DECLARE table_list TEXT;
     DECLARE query TEXT;
-
     SET table_list = table_names;
     SET @table_name = NULL;
-
     WHILE LENGTH(table_list) > 0 DO
         SET @table_name = SUBSTRING_INDEX(table_list, ',', 1);
         SET table_list = TRIM(BOTH ',' FROM SUBSTRING(table_list, LENGTH(@table_name) + 2));
-
         SET @query = CONCAT('DROP TABLE IF EXISTS ', @table_name);
         PREPARE stmt FROM @query;
         EXECUTE stmt;
         DEALLOCATE PREPARE stmt;
     END WHILE;
-
     SELECT 'Все таблицы успешно удалены' AS result;
 END$$
-
 DELIMITER ;
 
 CALL drop_tables_by_names('cats,dogs,hamsters,horses,camels,donkeys,horses_donkeys,young_animals,pack_animals,pet_animals');
@@ -622,39 +616,147 @@ Default locale: ru_RU, platform encoding: UTF-8
 OS name: "linux", version: "6.8.0-40-generic", arch: "amd64", family: "unix"
 ```
 
-Создадим модульный проект из архитепа в директори проекта
+Создадим проект из архитепа в директори проекта
 
 ```shell
-mvn archetype:generate -DgroupId=ru.aberezhnoy \
+~$ mvn archetype:generate -DgroupId=ru.aberezhnoy \
 -DartifactId=nursery \
 -DarchetypeArtifactId=maven-archetype-quickstart \
 -DarchetypeVersion=1.4 \
 -DinteractiveMode=false
 ```
 
+Посмотрим структуру проекта
+```shell
+~$ cd nursery/; tree
+.
+├── pom.xml
+└── src
+    ├── main
+    │   └── java
+    │       └── ru
+    │           └── aberezhnoy
+    │               └── App.java
+    └── test
+        └── java
+            └── ru
+                └── aberezhnoy
+                    └── AppTest.java
+
+10 directories, 3 files
+```
+
+Построим дерево зависимостей
+
+```shell
+~$ mvn dependency:tree
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< ru.aberezhnoy:nursery >------------------------
+[INFO] Building nursery 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-dependency-plugin:2.8:tree (default-cli) @ nursery ---
+[INFO] ru.aberezhnoy:nursery:jar:1.0-SNAPSHOT
+[INFO] \- junit:junit:jar:4.11:test
+[INFO]    \- org.hamcrest:hamcrest-core:jar:1.3:test
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.554 s
+[INFO] Finished at: 2024-10-31T13:42:37+03:00
+[INFO] ------------------------------------------------------------------------
+```
+
+Поробуем запустить шаблон
+
+```shell 
+~$ javac -d ./target/classes/ ./src/main/java/ru/aberezhnoy/App.java 
+~$ java -cp ./target/classes/ ru.aberezhnoy.App
+Hello World!
+```
+
+Попробуем скомпилировать проект с помощью maven
+
+```shell
+~$ mvn -DskipTests=true package
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------------< ru.aberezhnoy:nursery >------------------------
+[INFO] Building nursery 1.0-SNAPSHOT
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:resources (default-resources) @ nursery ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/alex/GeekBrains_prog_spec_final_test/nursery/src/main/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:compile (default-compile) @ nursery ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/alex/GeekBrains_prog_spec_final_test/nursery/target/classes
+[INFO] 
+[INFO] --- maven-resources-plugin:3.0.2:testResources (default-testResources) @ nursery ---
+[INFO] Using 'UTF-8' encoding to copy filtered resources.
+[INFO] skip non existing resourceDirectory /home/alex/GeekBrains_prog_spec_final_test/nursery/src/test/resources
+[INFO] 
+[INFO] --- maven-compiler-plugin:3.8.0:testCompile (default-testCompile) @ nursery ---
+[INFO] Changes detected - recompiling the module!
+[INFO] Compiling 1 source file to /home/alex/GeekBrains_prog_spec_final_test/nursery/target/test-classes
+[INFO] 
+[INFO] --- maven-surefire-plugin:2.22.1:test (default-test) @ nursery ---
+[INFO] Tests are skipped.
+[INFO] 
+[INFO] --- maven-jar-plugin:3.0.2:jar (default-jar) @ nursery ---
+[INFO] Building jar: /home/alex/GeekBrains_prog_spec_final_test/nursery/target/nursery-1.0-SNAPSHOT.jar
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  1.654 s
+[INFO] Finished at: 2024-10-30T13:20:29+03:00
+[INFO] ------------------------------------------------------------------------
+```
+
+Попробуем запустить приложение из jar-файла
+
+```shell
+~$ java -cp ./target/nursery-1.0-SNAPSHOT.jar ru.aberezhnoy.App
+Hello World!
+```
+
+Отлично! Проект настроен, попробуем разобраться в архитектурном паттерне MVP (model-view-presenter) 
+как продвинутой производной MVC (model-view-controller) и спроектировать структуру проекта.
+Можно было бы предложить модульную структуру и обвязать базу данных в отдельном модуле, 
+тогда придется для контейнеризации использовать docker-compose начнем с простой монолитной структуры
+
+
+
+
+
+
 mvn dependency:tree
 mvn package –Dmaven.test.skip=true
 mvn -DskipTests=true package
 
-#   - Создать иерархию классов в Java, который будет повторять диаграмму классов созданную в задаче 6(Диаграмма классов) .
 
-# 9. Программа-реестр домашних животных
-#    - Написать программу на Java, которая будет имитировать реестр домашних животных. 
-# Должен быть реализован следующий функционал:
+
+- Создать иерархию классов в Java, который будет повторять диаграмму классов созданную в задаче 6 (Диаграмма классов).
+
+### 9. Программа-реестр домашних животных
+- Написать программу на Java, которая будет имитировать реестр домашних животных. 
+Должен быть реализован следующий функционал:
     
-# 9.1. Добавление нового животного
-#     - Реализовать функциональность для добавления новых животных в реестр.       
-#     Животное должно определяться в правильный класс (например, "собака", "кошка", "хомяк" и т.д.)
-# 9.2. Список команд животного
-#     - Вывести список команд, которые может выполнять добавленное животное (например, "сидеть", "лежать").
-# 9.3. Обучение новым командам
-#     - Добавить возможность обучать животных новым командам.
-# 9.4 Вывести список животных по дате рождения
-# 9.5. Навигация по меню
-#     - Реализовать консольный пользовательский интерфейс с меню для навигации между вышеуказанными функциями.
+9.1. Добавление нового животного
+    - Реализовать функциональность для добавления новых животных в реестр.       
+    Животное должно определяться в правильный класс (например, "собака", "кошка", "хомяк" и т.д.)
+9.2. Список команд животного
+    - Вывести список команд, которые может выполнять добавленное животное (например, "сидеть", "лежать").
+9.3. Обучение новым командам
+    - Добавить возможность обучать животных новым командам.
+9.4 Вывести список животных по дате рождения
+9.5. Навигация по меню
+    - Реализовать консольный пользовательский интерфейс с меню для навигации между вышеуказанными функциями.
         
-# 10. Счетчик животных
-# Создать механизм, который позволяет вывести на экран общее 
-# количество созданных животных любого типа (Как домашних, так и 
-# вьючных), то есть при создании каждого нового животного счетчик 
-# увеличивается на “1”. 
+### 10. Счетчик животных
+Создать механизм, который позволяет вывести на экран общее 
+количество созданных животных любого типа (Как домашних, так и 
+вьючных), то есть при создании каждого нового животного счетчик 
+увеличивается на “1”. 
