@@ -200,7 +200,7 @@ $ git checkout -b command_list_and_mysql_task
 
 Нарисуем диаграмму с помощью вэб-сервиса draw.io и импортируем изображение в папку проекта. 
 
-![диаграмма классов](img/Nursery_class_diagram.png)
+![диаграмма классов](docs/img/Nursery_class_diagram.png)
 
 Зафиксируем добавленый артефакт в системе контроля версий
 
@@ -360,7 +360,7 @@ INSERT INTO `donkeys`(`name`, `birthdate`, `commands`) values ("Drugshreka", "20
 ```
 
 Структура таблиц после создания:
-![структуруа таблиц](img/tbls_struc.png)
+![структуруа таблиц](docs/img/tbls_struc.png)
 
 Удалив из таблицы верблюдов, т.к. верблюдов решили перевезти в другой питомник на зимовку. Объединить таблицы лошади, и ослы в одну таблицу.
 
@@ -549,7 +549,7 @@ CALL drop_tables_by_names('cats,dogs,hamsters,horses,camels,donkeys,horses_donke
 
 Итоговая структура базы данных: 
 
-![database structure](img/db_structure.png)
+![database structure](docs/img/db_structure.png)
 
 Установим Docker (для создания образа и развертывания будущего приложения в контейнере, а также настройки CI/CD pipeline)
 
